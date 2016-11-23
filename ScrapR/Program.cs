@@ -19,7 +19,22 @@ namespace ScrapR
 
             //runWkn();
             //runTrvBeta();
-            runTrvStart();
+            runWkn();
+            //Promise<object>.Create(() =>
+            //{
+            //    runTrvBeta();
+            //    return null;
+            //});
+            //Promise<object>.Create(() =>
+            //{
+            //    runTrvStart();
+            //    return null;
+            //});
+            //Promise<object>.Create(() =>
+            //{
+            //    runWkn();
+            //    return null;
+            //});
 
             Console.Read();
         }

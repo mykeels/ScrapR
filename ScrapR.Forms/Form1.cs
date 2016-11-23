@@ -25,14 +25,15 @@ namespace ScrapR.Forms
             this.Width = 1366;
             //System.Diagnostics.Debug.WriteLine(ScrapR.Models.TrvStart.Query.GetSampleQuery().ToJson());
             WebBrowserExtensions.SetFeatureBrowserEmulation();
-            webBrowser1.Navigate(Models.Wkn.Query.GetSampleQuery().ToString());
-            webBrowser1.DocumentCompleted += (object s, WebBrowserDocumentCompletedEventArgs ev) =>
-            {
-                webBrowser1.InjectScript(Resources.JSON);
-            };
             webBrowser1.Navigated += (object s, WebBrowserNavigatedEventArgs ev) =>
             {
                 this.Text = ev.Url.ToString();
+            };
+            webBrowser1.Navigate(Models.TrvStart.Query.GetSampleQuery().GetHomeUrl());
+            webBrowser1.DocumentCompleted += (object s, WebBrowserDocumentCompletedEventArgs ev) =>
+            {
+                webBrowser1.InjectScript(Resources.JSON);
+                webBrowser1.ExecuteScript<string>(Models.Resources.trvStart_setFlightsData, "setFlightData", new object[] { Models.TrvStart.Query.GetSampleQuery().ToJson() });
             };
         }
     }

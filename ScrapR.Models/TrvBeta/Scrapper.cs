@@ -110,5 +110,10 @@ namespace ScrapR.Models.TrvBeta
 
             return routes;
         }
+
+        public static Scrapper Create()
+        {
+            return new Scrapper();
+        }
     }
 }

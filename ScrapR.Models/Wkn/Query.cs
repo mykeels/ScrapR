@@ -29,12 +29,12 @@ namespace ScrapR.Models.Wkn
         public string airlinePref { get; set; }
         public string showFlexiDate { get; set; }
 
-        public string ToString()
+        public new string ToString()
         {
             return "http://www.wakanow.com/en-ng/flights/searchprocess/searchprocess?adults=" + adults + "&children=" + children + "&infants=" + infants + "&trip=" + trip +
                 "&deptCode=" + deptCode + "&arrvCode=" + arrvCode + "&searchType=" + searchType + "&deptYear=" + deptYear + "&deptMonth=" + deptMonth + "&deptDay=" + deptDay + 
                 "&retYear=" + retYear + "&retMonth=" + retMonth + "&retDay=" + retDay + "&cabin=" + cabin +
-                "&currency=" + currency + "&market=" + market + "&deptTime=" + deptTime + "&arrvTime=" + arrvTime + "&airlinePref=" + airlinePref + "&showFlexiDate=" + showFlexiDate;
+                "&currency=" + currency + "&Market=" + market + "&deptTime=" + deptTime + "&arrvTime=" + arrvTime + "&airlinePref=" + airlinePref + "&showFlexiDate=" + showFlexiDate;
         }
 
         public class Cabins
@@ -59,6 +59,12 @@ namespace ScrapR.Models.Wkn
             public const string Usa = "us";
         }
 
+        public class TripType
+        {
+            public const string OneWay = "OW";
+            public const string Return = "RT";
+        }
+
         public static Query GetSampleQuery()
         {
             var startDate = DateTime.Now.AddDays(3);
@@ -68,7 +74,7 @@ namespace ScrapR.Models.Wkn
                 adults = 1,
                 children = 0,
                 infants = 0,
-                trip = "OW",
+                trip = TripType.Return,
                 deptCode = "LOS",
                 arrvCode = "ABV",
                 searchType = "I",

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapR.Models", "ScrapR.Mod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapR.Forms", "ScrapR.Forms\ScrapR.Forms.csproj", "{2DE5B9EA-2227-4846-9DCE-2F1B578044A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapR.Web.Api", "ScrapR.Web.Api\ScrapR.Web.Api.csproj", "{7F161F52-E3D2-4373-81FB-429F2B0252AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{2DE5B9EA-2227-4846-9DCE-2F1B578044A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DE5B9EA-2227-4846-9DCE-2F1B578044A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DE5B9EA-2227-4846-9DCE-2F1B578044A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F161F52-E3D2-4373-81FB-429F2B0252AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F161F52-E3D2-4373-81FB-429F2B0252AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F161F52-E3D2-4373-81FB-429F2B0252AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F161F52-E3D2-4373-81FB-429F2B0252AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

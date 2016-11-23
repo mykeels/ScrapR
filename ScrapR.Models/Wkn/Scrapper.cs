@@ -64,5 +64,10 @@ namespace ScrapR.Models.Wkn
         {
             return GetFlightsData(query.ToString());
         }
+
+        public static Scrapper Create()
+        {
+            return new Scrapper();
+        }
     }
 }

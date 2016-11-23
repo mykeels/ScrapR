@@ -63,7 +63,15 @@ namespace ScrapR.Models.TrvStart
         {
             Query query = new Query();
             query = Newtonsoft.Json.JsonConvert.DeserializeObject<Query>(Resources.trvStart_SampleData);
-            query.tripType = TripType.returnTrip;
+            query.tripType = TripType.oneWay;
+
+            int dayAdd = 3;
+            query.itineraries.ForEach((itinerary) =>
+            {
+                itinerary.departDate = DateTime.Now.AddDays(dayAdd).ToString("yyyy-MM-dd");
+                itinerary.returnDate = DateTime.Now.AddDays(dayAdd + 2).ToString("yyyy-MM-dd");
+                dayAdd += 3;
+            });
             return query;
         }
     }

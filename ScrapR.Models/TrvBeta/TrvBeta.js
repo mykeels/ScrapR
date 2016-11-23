@@ -49,10 +49,10 @@ function setOneTripData(query) {
     return setTripData(query, 'one');
 }
 
+function setRoundTripData(query) {
     if (typeof query == "string") {
         query = JSON.parse(query);
     }
-function setRoundTripData(query) {
     $('#fromAirportRoundTrip .typeahead').val("cityA");
     $('#toAirportRoundTrip .typeahead').val("cityB");
     query.tripType = 2;
@@ -208,7 +208,7 @@ function getFlightsInfo(query) {
                 }
                 else if (moreDetail.indexOf('TOTAL FLIGHT TIME') >= 0) {
                     trip.totalFlightTime = moreDetail.split(":").slice(1).join(":");
-                    if (obj.trips[obj.trips.length - 1]) {
+                    if (obj.trips[obj.trips.length - 1] && obj.query.tripType >= 2) {
                         obj.trips[obj.trips.length - 1].totalFlightTime = moreDetail.split(":").slice(1).join(":");
                     }
                 }

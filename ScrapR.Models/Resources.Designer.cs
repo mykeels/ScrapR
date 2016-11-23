@@ -61,6 +61,16 @@ namespace ScrapR.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /*! jQuery v2.1.4 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
+        ///!function(a,b){&quot;object&quot;==typeof module&amp;&amp;&quot;object&quot;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(&quot;jQuery requires a window with a document&quot;);return b(a)}:b(a)}(&quot;undefined&quot;!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l=a.document,m=&quot;2.1.4&quot;,n=function(a,b){return new n.fn.init(a,b)},o=/^ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string jQuery {
+            get {
+                return ResourceManager.GetString("jQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;object&quot;!=typeof JSON&amp;&amp;(JSON={}),function(){&quot;use strict&quot;;function f(a){return a&lt;10?&quot;0&quot;+a:a}function this_value(){return this.valueOf()}function quote(a){return rx_escapable.lastIndex=0,rx_escapable.test(a)?&apos;&quot;&apos;+a.replace(rx_escapable,function(a){var b=meta[a];return&quot;string&quot;==typeof b?b:&quot;\\u&quot;+(&quot;0000&quot;+a.charCodeAt(0).toString(16)).slice(-4)})+&apos;&quot;&apos;:&apos;&quot;&apos;+a+&apos;&quot;&apos;}function str(a,b){var c,d,e,f,h,g=gap,i=b[a];switch(i&amp;&amp;&quot;object&quot;==typeof i&amp;&amp;&quot;function&quot;==typeof i.toJSON&amp;&amp;(i=i.toJSON(a)),&quot;function&quot;==typeof rep&amp;&amp;(i=rep.call( [rest of string was truncated]&quot;;.
         /// </summary>
         public static string JSON {
@@ -79,7 +89,7 @@ namespace ScrapR.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to { &quot;tripType&quot;: &quot;multi&quot;, &quot;isNewSession&quot;: false, &quot;travellers&quot;: { &quot;adults&quot;: 2, &quot;children&quot;: 0, &quot;infants&quot;: 0 }, &quot;moreOptions&quot;: {}, &quot;itineraries&quot;: [{ &quot;id&quot;: &quot;4b032ad8-f84b-4f18-84a7-754e411c20ad&quot;, &quot;departDate&quot;: &quot;2016-11-24&quot;, &quot;returnDate&quot;: &quot;2016-11-26&quot;, &quot;$$hashKey&quot;: &quot;object:45&quot;, &quot;origin&quot;: { &quot;display&quot;: &quot;Lagos (LOS)&quot;, &quot;value&quot;: { &quot;airport&quot;: &quot;Murtala Muhammed International Airport&quot;, &quot;city&quot;: &quot;Lagos&quot;, &quot;code&quot;: &quot;LOS&quot;, &quot;country&quot;: &quot;Nigeria&quot;, &quot;countryIata&quot;: &quot;NG&quot;, &quot;iata&quot;: &quot;LOS&quot;, &quot;locationId&quot;: &quot;airport_LOS&quot;, &quot;type&quot;: &quot;airport&quot; }  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to { &quot;tripType&quot;: &quot;multi&quot;, &quot;isNewSession&quot;: false, &quot;travellers&quot;: { &quot;adults&quot;: 2, &quot;children&quot;: 0, &quot;infants&quot;: 0 }, &quot;moreOptions&quot;: {}, &quot;itineraries&quot;: [{ &quot;id&quot;: &quot;4b032ad8-f84b-4f18-84a7-754e411c20ad&quot;, &quot;departDate&quot;: &quot;2016-11-28&quot;, &quot;returnDate&quot;: &quot;2016-11-30&quot;, &quot;$$hashKey&quot;: &quot;object:45&quot;, &quot;origin&quot;: { &quot;display&quot;: &quot;Lagos (LOS)&quot;, &quot;value&quot;: { &quot;airport&quot;: &quot;Murtala Muhammed International Airport&quot;, &quot;city&quot;: &quot;Lagos&quot;, &quot;code&quot;: &quot;LOS&quot;, &quot;country&quot;: &quot;Nigeria&quot;, &quot;countryIata&quot;: &quot;NG&quot;, &quot;iata&quot;: &quot;LOS&quot;, &quot;locationId&quot;: &quot;airport_LOS&quot;, &quot;type&quot;: &quot;airport&quot; }  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string trvStart_SampleData {
             get {
@@ -88,7 +98,7 @@ namespace ScrapR.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to function setFlightData(a){&quot;string&quot;==typeof a&amp;&amp;(a=JSON.parse(a));var b=angular.element(document.querySelector(&quot;.search-form__row&quot;)).scope(),c=b.$parent.searchFormController;c.searchData.tripType=a.tripType;for(var d=0;d&lt;a.itineraries.length;d++)c.searchData.itineraries[d]||(c.addFlight(),b.$apply()),c.searchData.itineraries[d].departDate=a.itineraries[d].departDate,c.searchData.itineraries[d].returnDate=a.itineraries[d].returnDate,c.searchData.itineraries[d].destination=a.itineraries[d].destination,c.searchD [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to function setFlightData(a){&quot;string&quot;==typeof a&amp;&amp;(a=JSON.parse(a));var b=angular.element($(&quot;.search-form__row&quot;)[0]).scope(),c=b.$parent.searchFormController;c.searchData.tripType=a.tripType;for(var d=0;d&lt;a.itineraries.length;d++)c.searchData.itineraries[d]||(c.addFlight(),b.$apply()),c.searchData.itineraries[d].departDate=a.itineraries[d].departDate,c.searchData.itineraries[d].returnDate=a.itineraries[d].returnDate,c.searchData.itineraries[d].destination=a.itineraries[d].destination,c.searchData.itineraries[d] [rest of string was truncated]&quot;;.
         /// </summary>
         public static string trvStart_setFlightsData {
             get {

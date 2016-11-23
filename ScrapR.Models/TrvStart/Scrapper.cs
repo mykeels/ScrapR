@@ -18,6 +18,7 @@ namespace ScrapR.Models.TrvStart
                 string scriptData = Resources.trvStart_setFlightsData.ToString();
 
                 browser.InjectScript(Resources.JSON);
+                browser.InjectScript(Resources.jQuery);
 
                 string location = browser.ExecuteScript<string>(scriptData, "setFlightData", (new object[] { query.ToJson() }));
 
@@ -57,6 +58,8 @@ namespace ScrapR.Models.TrvStart
             Console.WriteLine("Test Data: \n" + query.ToJson(true));
 
             Models.TrvStart.Scrapper scrapper = new Models.TrvStart.Scrapper();
+            //var task = Task.Run(async () => { await scrapper.GetItinerariesAsync(query, cts.Token) });
+            //task.Wait();
 
             var itineraries = scrapper.RunTask(scrapper.GetItinerariesAsync(query, cts.Token));
             Console.WriteLine(itineraries.Count + "Flights Found");
@@ -66,6 +69,11 @@ namespace ScrapR.Models.TrvStart
             Console.WriteLine("========================================================= End of Tests for TrvStart " + 
                 "====================================================================");
             return itineraries;
+        }
+
+        public static Scrapper Create()
+        {
+            return new Scrapper();
         }
     }
 }

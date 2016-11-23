@@ -89,10 +89,10 @@ namespace ScrapR.Models
             {
                 WebBrowserExtensions.SetFeatureBrowserEmulation(); // enable HTML5
 
-                var task = execTask;
-
+                //var task = execTask;
+                //task.Wait();
+                var task = Task.Run(async () => await execTask);
                 task.Wait();
-
                 return task.Result;
             }
             catch (Exception ex)

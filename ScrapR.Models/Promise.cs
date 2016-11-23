@@ -17,6 +17,7 @@ namespace ScrapR.Models
         private Action<Exception> error { get; set; }
         private Func<T> work { get; set; }
         private int timeout { get; set; }
+        public T Result { get; set; }
 
         public Promise(Func<T> func)
         {
@@ -44,16 +45,16 @@ namespace ScrapR.Models
         {
             try
             {
-                dynamic result = work();
+                this.Result = work();
                 if (success != null)
                 {
-                    success(result);
+                    success(this.Result);
                 }
                 if (then.Count > 0)
                 {
                     then.ForEach((action) =>
                     {
-                        action(result);
+                        action(this.Result);
                     });
                 }
                 if (state.Equals(State.Pending)) state = State.Fulfilled;
