@@ -1,0 +1,9 @@
+c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.exe.config
+c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.exe
+c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.pdb
+c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\obj\Debug\ScrapR.csprojResolveAssemblyReference.cache
+c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\obj\Debug\ScrapR.exe
+c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\obj\Debug\ScrapR.pdb
+c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\bin\Debug\Newtonsoft.Json.dll
+c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.Models.dll
+c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.Models.pdb

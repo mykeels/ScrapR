@@ -1,0 +1,13 @@
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\bin\Debug\ScrapR.Forms.exe.config
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\bin\Debug\ScrapR.Forms.exe
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\bin\Debug\ScrapR.Forms.pdb
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\bin\Debug\ScrapR.Models.dll
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\bin\Debug\ScrapR.Models.pdb
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\obj\Debug\ScrapR.Forms.csprojResolveAssemblyReference.cache
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\obj\Debug\ScrapR.Forms.Form1.resources
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\obj\Debug\ScrapR.Forms.Properties.Resources.resources
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\obj\Debug\ScrapR.Forms.csproj.GenerateResource.Cache
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\obj\Debug\ScrapR.Forms.exe
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\obj\Debug\ScrapR.Forms.pdb
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\bin\Debug\Extensions.dll
+c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Forms\bin\Debug\Newtonsoft.Json.dll

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapR", "ScrapR\ScrapR.csproj", "{6ADB8691-E1FE-4649-BD6D-7FBB3B2454B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapR.Models", "ScrapR.Models\ScrapR.Models.csproj", "{52EAE085-3AC5-46F9-9C4E-D12A6F4D8641}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapR.Forms", "ScrapR.Forms\ScrapR.Forms.csproj", "{2DE5B9EA-2227-4846-9DCE-2F1B578044A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ADB8691-E1FE-4649-BD6D-7FBB3B2454B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ADB8691-E1FE-4649-BD6D-7FBB3B2454B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ADB8691-E1FE-4649-BD6D-7FBB3B2454B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ADB8691-E1FE-4649-BD6D-7FBB3B2454B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52EAE085-3AC5-46F9-9C4E-D12A6F4D8641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52EAE085-3AC5-46F9-9C4E-D12A6F4D8641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52EAE085-3AC5-46F9-9C4E-D12A6F4D8641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52EAE085-3AC5-46F9-9C4E-D12A6F4D8641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE5B9EA-2227-4846-9DCE-2F1B578044A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE5B9EA-2227-4846-9DCE-2F1B578044A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE5B9EA-2227-4846-9DCE-2F1B578044A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE5B9EA-2227-4846-9DCE-2F1B578044A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
