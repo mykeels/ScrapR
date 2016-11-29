@@ -116,7 +116,7 @@ namespace ScrapR.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to function createSetTripType(){var a=angular.element(&apos;[data-ng-controller=&quot;FlightSearchFormCtrl as searchCtrl&quot;]&apos;).scope();a.searchCtrl.setTripType=function(b){this.tripType=b,this.currentTripType=b,this.isMultiCity=&quot;Circle&quot;==b,this.isReturnTrip=&quot;Return&quot;==b,a.$applyAsync()}}function copyObject(a,b){for(var c in b)if(a&amp;&amp;a.hasOwnProperty(c)){var d=typeof a[c];&quot;airport&quot;==c?a[c]=b[c]:&quot;string&quot;==d||&quot;number&quot;==d||&quot;boolean&quot;==d||&quot;date&quot;==d?a[c]=b[c]:&quot;object&quot;==d?copyObject(a[c],b[c]):Array.isArray(b[c])&amp;&amp;copyArray(a[c],b[ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string trvFix_setFlightsData {
             get {

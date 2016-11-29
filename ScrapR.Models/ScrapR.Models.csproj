@@ -68,6 +68,7 @@
     <Compile Include="TrvBeta\Route.cs" />
     <Compile Include="TrvFix\Query.cs" />
     <Compile Include="TrvFix\Result.cs" />
+    <Compile Include="TrvFix\Scrapper.cs" />
     <Compile Include="TrvStart\Itinerary.cs" />
     <Compile Include="TrvStart\Query.cs" />
     <Compile Include="TrvStart\Scrapper.cs" />

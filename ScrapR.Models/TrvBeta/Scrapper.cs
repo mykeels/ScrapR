@@ -45,7 +45,11 @@ namespace ScrapR.Models.TrvBeta
                 Console.WriteLine("Navigating ... Please wait");
                 while (!browser.Url.ToString().Contains("/searchresult"))
                 {
-                    Thread.Sleep(500);
+                    Thread.Sleep(100);
+                    Application.DoEvents();
+                }
+                while (browser.ReadyState != WebBrowserReadyState.Complete)
+                {
                     Application.DoEvents();
                 }
                 Console.WriteLine(browser.Url.ToString() + " ... Please wait");
@@ -91,7 +95,7 @@ namespace ScrapR.Models.TrvBeta
                     routes = Newtonsoft.Json.JsonConvert.DeserializeObject<Models.TrvBeta.Routes>(result["flightsData"]).TrimAll();
 
                     Console.WriteLine(routes.ToJson(true));
-                    Console.WriteLine(routes.Count + "Flights Found");
+                    Console.WriteLine(routes.Count + " Flights Found");
                 }
                 else
                 {

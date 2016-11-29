@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using mshtml;
 
-namespace ScrapR.Models.TrvStart
+namespace ScrapR.Models.TrvFix
 {
     public class Scrapper : ScrapR.Models.Scrapper
     {
-        public async Task<List<Itinerary>> GetItinerariesAsync(Query query, CancellationToken token)
-        {
-            return await this.ExecutePageAsync<List<Itinerary>>(query.GetHomeUrl(), token, (browser) =>
-            {
-                string scriptData = Resources.trvStart_setFlightsData.ToString();
 
+        public async Task<List<Result>> GetResultsAsync(Query query, CancellationToken token)
+        {
+            return await this.ExecutePageAsync<List<Result>>(Query.GetHomeUrl(), token, (browser) =>
+            {
+                string scriptData = Resources.trvFix_setFlightsData;
                 browser.InjectScript(Resources.JSON);
                 browser.InjectScript(Resources.jQuery);
 
@@ -24,49 +24,48 @@ namespace ScrapR.Models.TrvStart
 
                 Console.WriteLine("\nSearchData after setFlightData: " + searchData);
                 Console.WriteLine("Waiting for Location Change ... Please wait");
-                while (!browser.Url.ToString().Contains("/search-results/"))
+                while (!browser.Url.ToString().Contains("flight/r"))
                 {
                     Thread.Sleep(100);
                     Application.DoEvents();
                 }
-                Console.WriteLine("Location after polling: " + browser.Url.ToString());
-                /*for (int i = 0; i < 100; i++)
+                while (browser.ReadyState != WebBrowserReadyState.Complete)
                 {
-                    Thread.Sleep(50);
                     Application.DoEvents();
-                }*/
-                var itineraries = new List<Itinerary>();
-                
-                browser.InjectScript(Resources.JSON);
-                var itinerariesJson = browser.ExecuteScript<string>(scriptData, "getAirlineScopeItineraries");
-                if (!String.IsNullOrEmpty(itinerariesJson))
-                {
-                    itineraries = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Itinerary>>(itinerariesJson);
                 }
+                Console.WriteLine("Location after polling: " + browser.Url.ToString());
 
-                return itineraries;
+                browser.InjectScript(Resources.JSON);
+                int batch = 0;
+                string resultsJson = "";
+                var results = new List<Result>();
+                while (resultsJson != "[]" && resultsJson != null)
+                {
+                    resultsJson = browser.ExecuteScript<string>(scriptData, "getFlightResultsData", new object[] { batch });
+                    results.AddRange(Newtonsoft.Json.JsonConvert.DeserializeObject<List<Result>>(resultsJson));
+                    batch++;
+                }
+                return results;
             });
         }
 
-        public List<Itinerary> GetItineraries(Query query = null)
+        public List<Result> GetResults(Query query = null)
         {
             var startDate = DateTime.Now;
-            if (query == null) query = Models.TrvStart.Query.GetSampleQuery();
+            if (query == null) query = Query.GetSampleData(Query.TripType.multi);
             var cts = new CancellationTokenSource((int)TimeSpan.FromMinutes(3).TotalMilliseconds);
 
-            Console.WriteLine("Run TrvStart");
+            Console.WriteLine("Run TrvFix");
             Console.WriteLine("\nTest Search Data: \n" + query.ToJson());
 
-            Models.TrvStart.Scrapper scrapper = new Models.TrvStart.Scrapper();
-            //var task = Task.Run(async () => { await scrapper.GetItinerariesAsync(query, cts.Token) });
-            //task.Wait();
+            Scrapper scrapper = new Scrapper();
 
-            var itineraries = scrapper.RunTask(scrapper.GetItinerariesAsync(query, cts.Token));
-            Console.WriteLine(itineraries.Count + " Flight Itineraries Found");
+            var itineraries = scrapper.RunTask(scrapper.GetResultsAsync(query, cts.Token));
             Console.WriteLine("\nResult Data:\t" + itineraries.ToJson(true));
             var endDate = DateTime.Now;
+            Console.WriteLine(itineraries.Count + " Flight Itineraries Found");
             Console.WriteLine("Time Taken: " + endDate.Subtract(startDate).TotalSeconds + " seconds");
-            Console.WriteLine("========================================================= End of Tests for TrvStart " + 
+            Console.WriteLine("========================================================= End of Tests for TrvStart " +
                 "====================================================================");
             return itineraries;
         }

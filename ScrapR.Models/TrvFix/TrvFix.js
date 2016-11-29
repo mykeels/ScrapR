@@ -15,7 +15,7 @@ String.isNullOrEmpty = function (str) {
 
 function copyObject(objA, objB) {
     for (var key in objB) {
-        if (objA.hasOwnProperty(key)) {
+        if (objA && objA.hasOwnProperty(key)) {
             var type = typeof objA[key];
             if (key == 'airport') objA[key] = objB[key];
             else if (type == 'string' || type == 'number' || type == 'boolean' || type == 'date') {
@@ -54,7 +54,11 @@ function copyArray(arrA, arrB) {
 
 function setFlightData(query) {
     if (!query) return;
-    if (typeof query == 'string') query = JSON.parse(query); //convert from string to object when data is entered by the web scraper
+    if (typeof query == 'string') {
+        this.argsIsString = true;
+        query = JSON.parse(query);
+        //convert from string to object when data is entered by the web scraper
+    }
     var $scope = angular.element('[data-ng-controller="FlightSearchFormCtrl as searchCtrl"]').scope();
     var searchCtrl = $scope.searchCtrl;
     copyObject(searchCtrl, query);
@@ -62,5 +66,25 @@ function setFlightData(query) {
     searchCtrl.setTripType(query.tripType);
     $scope.$applyAsync();
     searchCtrl.submit();
-    return searchCtrl;
+    return JSON.stringify(searchCtrl);
+}
+
+function getFlightResults() {
+    var obj = angular.element('[ng-controller="FlightResultCtrl as flightResultCtrl"]').scope().flightResultCtrl.flightResults.airlineFlights;
+    var ret = [];
+    for (var key in obj) {
+        ret = ret.concat(obj[key]);
+    }
+    return ret;
+}
+
+function getFlightResultsData(batch) {
+    batch = batch || 0;
+    var batchLength = 5;
+    if (!window.flightResult) window.flightResult = getFlightResults();
+    var ret = [];
+    for (var i = batch * batchLength; i < Math.min((batch * batchLength) + batchLength, window.flightResult.length) ; i++) {
+        ret.push(window.flightResult[i]);
+    }
+    return JSON.stringify(ret);
 }

@@ -102,5 +102,10 @@ namespace ScrapR.Models.TrvFix
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<Query>(tripType == TripType.oneWay ? Resources.trvFix_sampleOneWayData : (tripType == TripType.returnTrip ? Resources.trvFix_sampleReturnData : Resources.trvFix_sampleMultiData));
         }
+
+        public static string GetHomeUrl()
+        {
+            return "http://travelfix.com/";
+        }
     }
 }

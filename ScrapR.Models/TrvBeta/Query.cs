@@ -54,20 +54,20 @@ namespace ScrapR.Models.TrvBeta
                 adult = 1,
                 departureAirportId = 35248, //lagos nigeria
                 arrivalAirportId = 34277, //jfk, new york
-                departingDate = DateTime.Now.AddDays(2).ToString("dd/MM/yyyy"),
-                returningDate = DateTime.Now.AddDays(4).ToString("dd/MM/yyyy"),
+                departingDate = DateTime.Now.AddDays(4).ToString("dd/MM/yyyy"),
+                returningDate = DateTime.Now.AddDays(8).ToString("dd/MM/yyyy"),
                 flightClass = "economy",
-                tripType = 3,
+                tripType = TripType.Multi,
                 multiTrip = (new Models.TrvBeta.Query.Trip[] {
                     new Models.TrvBeta.Query.Trip() {
                         arrivalAirportId = 34277, //jfk
                         departureAirportId = 35248, //lagos
-                        departingDate = DateTime.Now.AddDays(2).ToString("dd/MM/yyyy")
+                        departingDate = DateTime.Now.AddDays(4).ToString("dd/MM/yyyy")
                     },
                     new Models.TrvBeta.Query.Trip() {
                         arrivalAirportId = 34979, //los angeles
                         departureAirportId = 34277, //jfk
-                        departingDate = DateTime.Now.AddDays(4).ToString("dd/MM/yyyy")
+                        departingDate = DateTime.Now.AddDays(8).ToString("dd/MM/yyyy")
                     }
                 }).ToList()
             };

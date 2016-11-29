@@ -31,3 +31,4 @@ C:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Web.Api\bin
 C:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Web.Api\obj\Debug\ScrapR.Web.Api.csprojResolveAssemblyReference.cache
 C:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Web.Api\obj\Debug\ScrapR.Web.Api.dll
 C:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Web.Api\obj\Debug\ScrapR.Web.Api.pdb
+C:\Users\MYKEELS\Documents\Visual Studio 2012\Projects\ScrapR\ScrapR.Web.Api\bin\ScrapR.Web.Api.dll.config

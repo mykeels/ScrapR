@@ -41,11 +41,19 @@ namespace ScrapR
                     runTrvBeta();
                     break;
                 case 4:
-                    Console.WriteLine("This has not been implemented yet");
+                    //Console.WriteLine("This has not been implemented yet");
+                    //Console.WriteLine(Models.TrvFix.Result.GetSampleData().ToJson(true));
+                    runTrvFix();
                     break;
                 default:
                     break;
             }
+        }
+
+        private static void runTrvFix()
+        {
+            Models.TrvFix.Scrapper scrapper = new Models.TrvFix.Scrapper();
+            scrapper.GetResults();
         }
 
         private static void runTrvBeta()
