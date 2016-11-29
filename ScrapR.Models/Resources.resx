@@ -136,4 +136,16 @@
   <data name="wkn_getFlightsData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\wkn_getFlightsData.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="trvFix_sampleMultiData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\trvFix_sampleMultiData.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="trvFix_sampleOneWayData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\trvFix_sampleOneWayData.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="trvFix_sampleReturnData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\trvFix_sampleReturnData.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="trvFix_setFlightsData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\trvFix_setFlightsData.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>

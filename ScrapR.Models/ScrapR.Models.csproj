@@ -66,6 +66,8 @@
     <Compile Include="TrvBeta\Query.cs" />
     <Compile Include="TrvBeta\Scrapper.cs" />
     <Compile Include="TrvBeta\Route.cs" />
+    <Compile Include="TrvFix\Query.cs" />
+    <Compile Include="TrvFix\Result.cs" />
     <Compile Include="TrvStart\Itinerary.cs" />
     <Compile Include="TrvStart\Query.cs" />
     <Compile Include="TrvStart\Scrapper.cs" />
@@ -97,6 +99,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\jQuery.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trvFix_sampleMultiData.txt" />
+    <None Include="Resources\trvFix_sampleReturnData.txt" />
+    <None Include="Resources\trvFix_sampleOneWayData.txt" />
+    <None Include="Resources\trvFix_setFlightsData.txt" />
+    <Content Include="TrvFix\TrvFix.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

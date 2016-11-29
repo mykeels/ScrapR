@@ -20,9 +20,9 @@ namespace ScrapR.Models.TrvStart
                 browser.InjectScript(Resources.JSON);
                 browser.InjectScript(Resources.jQuery);
 
-                string location = browser.ExecuteScript<string>(scriptData, "setFlightData", (new object[] { query.ToJson() }));
+                string searchData = browser.ExecuteScript<string>(scriptData, "setFlightData", (new object[] { query.ToJson() }));
 
-                Console.WriteLine("Location after setFlightData: " + location);
+                Console.WriteLine("\nSearchData after setFlightData: " + searchData);
                 Console.WriteLine("Waiting for Location Change ... Please wait");
                 while (!browser.Url.ToString().Contains("/search-results/"))
                 {
@@ -55,15 +55,15 @@ namespace ScrapR.Models.TrvStart
             var cts = new CancellationTokenSource((int)TimeSpan.FromMinutes(3).TotalMilliseconds);
 
             Console.WriteLine("Run TrvStart");
-            Console.WriteLine("Test Data: \n" + query.ToJson(true));
+            Console.WriteLine("\nTest Search Data: \n" + query.ToJson());
 
             Models.TrvStart.Scrapper scrapper = new Models.TrvStart.Scrapper();
             //var task = Task.Run(async () => { await scrapper.GetItinerariesAsync(query, cts.Token) });
             //task.Wait();
 
             var itineraries = scrapper.RunTask(scrapper.GetItinerariesAsync(query, cts.Token));
-            Console.WriteLine(itineraries.Count + "Flights Found");
-            Console.WriteLine(itineraries.ToJson(true));
+            Console.WriteLine(itineraries.Count + "Flight Itineraries Found");
+            Console.WriteLine("\nResult Data:\t" + itineraries.ToJson(true));
             var endDate = DateTime.Now;
             Console.WriteLine("Time Taken: " + endDate.Subtract(startDate).TotalSeconds + " seconds");
             Console.WriteLine("========================================================= End of Tests for TrvStart " + 

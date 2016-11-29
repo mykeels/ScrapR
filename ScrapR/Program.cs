@@ -14,32 +14,39 @@ namespace ScrapR
     {
         public static void Main(string[] args)
         {
-            //Console.WriteLine(Models.TrvBeta.Query.GetSample().ToJson(true));
-            //Console.Read();
-
-            //runWkn();
-            //runTrvBeta();
-            runWkn();
-            //Promise<object>.Create(() =>
-            //{
-            //    runTrvBeta();
-            //    return null;
-            //});
-            //Promise<object>.Create(() =>
-            //{
-            //    runTrvStart();
-            //    return null;
-            //});
-            //Promise<object>.Create(() =>
-            //{
-            //    runWkn();
-            //    return null;
-            //});
-
+            runScrapper(getUserOption());
             Console.Read();
         }
 
-        
+        private static int getUserOption()
+        {
+            Console.WriteLine("1\t Wakanow");
+            Console.WriteLine("2\t Trv Start");
+            Console.WriteLine("3\t Trv Beta");
+            Console.WriteLine("4\t Trv Fix");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+
+        private static void runScrapper(int option)
+        {
+            switch (option)
+            {
+                case 1:
+                    runWkn();
+                    break;
+                case 2:
+                    runTrvStart();
+                    break;
+                case 3:
+                    runTrvBeta();
+                    break;
+                case 4:
+                    Console.WriteLine("This has not been implemented yet");
+                    break;
+                default:
+                    break;
+            }
+        }
 
         private static void runTrvBeta()
         {
