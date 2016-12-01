@@ -11,7 +11,7 @@ namespace ScrapR.Models
 {
     public class Scrapper
     {
-        protected async Task<T> ExecutePageAsync<T>(string url, CancellationToken token, Func<WebBrowser, T> func)
+        public async Task<T> ExecutePageAsync<T>(string url, CancellationToken token, Func<WebBrowser, T> func)
         {
             using (var apartment = new MessageLoopApartment())
             {
@@ -88,9 +88,6 @@ namespace ScrapR.Models
             try
             {
                 WebBrowserExtensions.SetFeatureBrowserEmulation(); // enable HTML5
-
-                //var task = execTask;
-                //task.Wait();
                 var task = Task.Run(async () => await execTask);
                 task.Wait();
                 return task.Result;
@@ -103,6 +100,13 @@ namespace ScrapR.Models
                 //Environment.Exit(-1);
                 return default(T);
             }
+        }
+
+        public void RunTask(Task execTask)
+        {
+            WebBrowserExtensions.SetFeatureBrowserEmulation(); // enable HTML5
+            var task = Task.Run(async () => await execTask);
+            task.Wait();
         }
     }
 }

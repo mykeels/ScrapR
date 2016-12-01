@@ -61,6 +61,54 @@ namespace ScrapR.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Goroka,Goroka,Papua New Guinea,GKA,AYGA,-6.081689,145.391881,5282,10,U,Pacific/Port_Moresby
+        ///Madang,Madang,Papua New Guinea,MAG,AYMD,-5.207083,145.7887,20,10,U,Pacific/Port_Moresby
+        ///Mount Hagen,Mount Hagen,Papua New Guinea,HGU,AYMH,-5.826789,144.295861,5388,10,U,Pacific/Port_Moresby
+        ///Nadzab,Nadzab,Papua New Guinea,LAE,AYNZ,-6.569828,146.726242,239,10,U,Pacific/Port_Moresby
+        ///Port Moresby Jacksons Intl,Port Moresby,Papua New Guinea,POM,AYPY,-9.443383,147.22005,146,10,U,Pacific/Port_Moresby
+        ///Wewak Intl,Wewak,P [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string airports {
+            get {
+                return ResourceManager.GetString("airports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aruba,AA,AW,U
+        ///Antigua and Barbuda,AC,AG,U
+        ///United Arab Emirates,AE,AE,U
+        ///Afghanistan,AF,AF,U
+        ///Algeria,AG,DZ,N
+        ///Azerbaijan,AJ,AZ,E
+        ///Albania,AL,AL,E
+        ///Armenia,AM,AM,E
+        ///Angola,AO,AO,N
+        ///American Samoa,AQ,AS,U
+        ///Argentina,AR,AR,S
+        ///Australia,AS,AU,U
+        ///Ashmore and Cartier Islands,AT,\N,\N
+        ///Austria,AU,AT,E
+        ///Anguilla,AV,AI,U
+        ///Antarctica,AY,AQ,U
+        ///Bahrain,BA,BH,U
+        ///Barbados,BB,BB,U
+        ///Botswana,BC,BW,U
+        ///Bermuda,BD,BM,U
+        ///Belgium,BE,BE,E
+        ///Bahamas,BF,BS,U
+        ///Bangladesh,BG,BD,U
+        ///Belize,BH,BZ,U
+        ///Bosnia and Herzegovina,BK,BA,E
+        ///Bol [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string countries {
+            get {
+                return ResourceManager.GetString("countries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /*! jQuery v2.1.4 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
         ///!function(a,b){&quot;object&quot;==typeof module&amp;&amp;&quot;object&quot;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(&quot;jQuery requires a window with a document&quot;);return b(a)}:b(a)}(&quot;undefined&quot;!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l=a.document,m=&quot;2.1.4&quot;,n=function(a,b){return new n.fn.init(a,b)},o=/^ [rest of string was truncated]&quot;;.
         /// </summary>
@@ -121,6 +169,24 @@ namespace ScrapR.Models {
         public static string trvFix_setFlightsData {
             get {
                 return ResourceManager.GetString("trvFix_setFlightsData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;trips&quot;:[{&quot;airportOrigin&quot;:&quot;Lagos,Nigeria-Murtala Muhammed(LOS)&quot;,&quot;airportDestination&quot;:&quot;Abuja,Nigeria-Nnamdi Azikiwe Intl(ABV)&quot;,&quot;departureDate&quot;:&quot;Sat, 03 Dec 2016&quot;,&quot;departureTime&quot;:&quot;Anytime&quot;,&quot;returnDate&quot;:&quot;Tue, 06 Dec 2016&quot;,&quot;returnTime&quot;:&quot;Anytime&quot;},{&quot;airportOrigin&quot;:&quot;Abuja,Nigeria-Nnamdi Azikiwe Intl(ABV)&quot;,&quot;airportDestination&quot;:&quot;London,United Kingdom-Heathrow(LHR)&quot;,&quot;departureDate&quot;:&quot;Fri, 09 Dec 2016&quot;,&quot;departureTime&quot;:&quot;Anytime&quot;,&quot;returnDate&quot;:&quot;&quot;,&quot;returnTime&quot;:&quot;Anytime&quot;}],&quot;adults&quot;:1,&quot;children&quot;:0,&quot;infants&quot;:0,&quot;tripClass&quot;:&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string trvPaddy_sampleInternational {
+            get {
+                return ResourceManager.GetString("trvPaddy_sampleInternational", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;trips&quot;:[{&quot;airportOrigin&quot;:&quot;Lagos, NG - Murtala Muhammed (LOS)&quot;,&quot;airportDestination&quot;:&quot;Abuja, NG - Nnamdi Azikiwe Intl (ABV)&quot;,&quot;departureDate&quot;:&quot;Sat, 03 Dec 2016&quot;,&quot;departureTime&quot;:&quot;&quot;,&quot;returnDate&quot;:&quot;Tue, 06 Dec 2016&quot;,&quot;returnTime&quot;:&quot;&quot;},{&quot;airportOrigin&quot;:&quot;Abuja, NG - Nnamdi Azikiwe Intl (ABV)&quot;,&quot;airportDestination&quot;:&quot;London, GB - Heathrow (LHR)&quot;,&quot;departureDate&quot;:&quot;Fri, 09 Dec 2016&quot;,&quot;departureTime&quot;:null,&quot;returnDate&quot;:&quot;&quot;,&quot;returnTime&quot;:&quot;&quot;}],&quot;adults&quot;:1,&quot;children&quot;:0,&quot;infants&quot;:0,&quot;tripClass&quot;:&quot;all&quot;,&quot;tripType&quot;:&quot;multi&quot;}.
+        /// </summary>
+        public static string trvPaddy_sampleLocal {
+            get {
+                return ResourceManager.GetString("trvPaddy_sampleLocal", resourceCulture);
             }
         }
         

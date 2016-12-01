@@ -20,10 +20,12 @@ namespace ScrapR
 
         private static int getUserOption()
         {
+            //Console.WriteLine(DateTime.Now.ToString("ddd, dd MMM yyyy"));
             Console.WriteLine("1\t Wakanow");
             Console.WriteLine("2\t Trv Start");
             Console.WriteLine("3\t Trv Beta");
             Console.WriteLine("4\t Trv Fix");
+            Console.WriteLine("5\t Trv Paddy");
             return Convert.ToInt32(Console.ReadLine());
         }
 
@@ -41,13 +43,29 @@ namespace ScrapR
                     runTrvBeta();
                     break;
                 case 4:
-                    //Console.WriteLine("This has not been implemented yet");
-                    //Console.WriteLine(Models.TrvFix.Result.GetSampleData().ToJson(true));
                     runTrvFix();
+                    break;
+                case 5:
+                    runTrvPaddy();
                     break;
                 default:
                     break;
             }
+        }
+
+        private static void runTrvPaddy()
+        {
+            var baseQuery = Models.TrvPaddy.Query.GetSampleData();
+            var localQuery = Models.TrvPaddy.Local.Query.GetQuery(baseQuery);
+            var internationalQuery = Models.TrvPaddy.International.Query.GetQuery(baseQuery);
+            Console.WriteLine("Base Query: " + baseQuery.ToJson(true));
+            Promise<string>.Create(() =>
+            {
+                Clipboard.SetText(internationalQuery.ToJson());
+                return null;
+            });
+            Console.WriteLine("Local Query: " + localQuery.ToJson(true));
+            Console.WriteLine("International Query: " + internationalQuery.ToJson(true));
         }
 
         private static void runTrvFix()
