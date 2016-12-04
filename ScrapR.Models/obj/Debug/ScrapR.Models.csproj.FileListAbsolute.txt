@@ -6,3 +6,10 @@ c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Models\obj\
 c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Models\obj\Debug\ScrapR.Models.pdb
 c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Models\obj\Debug\ScrapR.Models.csproj.GenerateResource.Cache
 c:\Users\MYKEELS\documents\visual studio 2012\Projects\ScrapR\ScrapR.Models\obj\Debug\ScrapR.Models.Resources.resources
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR.Models\bin\Debug\ScrapR.Models.dll
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR.Models\bin\Debug\ScrapR.Models.pdb
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR.Models\obj\Debug\ScrapR.Models.csprojResolveAssemblyReference.cache
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR.Models\obj\Debug\ScrapR.Models.Resources.resources
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR.Models\obj\Debug\ScrapR.Models.csproj.GenerateResource.Cache
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR.Models\obj\Debug\ScrapR.Models.dll
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR.Models\obj\Debug\ScrapR.Models.pdb

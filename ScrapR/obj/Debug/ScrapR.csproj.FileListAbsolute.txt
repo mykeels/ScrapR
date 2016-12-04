@@ -7,3 +7,11 @@ c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\obj\Debug\S
 c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\bin\Debug\Newtonsoft.Json.dll
 c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.Models.dll
 c:\users\mykeels\documents\visual studio 2012\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.Models.pdb
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.exe.config
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR\obj\Debug\ScrapR.exe
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR\obj\Debug\ScrapR.pdb
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.exe
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.pdb
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.Models.dll
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR\bin\Debug\ScrapR.Models.pdb
+C:\Users\IKECHI\Documents\Visual Studio 2015\Projects\ScrapR\ScrapR\obj\Debug\ScrapR.csprojResolveAssemblyReference.cache
