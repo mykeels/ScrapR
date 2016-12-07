@@ -18,8 +18,8 @@ namespace ScrapR.Models.TrvBeta
                 string scriptData = Resources.trvBeta_setFlightsData.ToString();
                 string tripFn = "setOneTripData";
                 string submitFn = "submitOneTripForm";
-                if (query.tripType == Query.TripType.OneWay) { }
-                else if (query.tripType == Query.TripType.Return)
+                if (query.tripType == (int)Query.TripType.OneWay) { }
+                else if (query.tripType == (int)Query.TripType.Return)
                 {
                     tripFn = "setRoundTripData";
                     submitFn = "submitRoundTripForm";
@@ -78,12 +78,10 @@ namespace ScrapR.Models.TrvBeta
 
             var cts = new CancellationTokenSource((int)TimeSpan.FromMinutes(3).TotalMilliseconds);
 
-            Console.WriteLine("Run TravelBeta");
+            Console.WriteLine("Run TrvBeta");
             Console.WriteLine("Test Data: \n" + query.ToJson(true));
 
-            Models.TrvBeta.Scrapper scrapper = new Models.TrvBeta.Scrapper();
-
-            Dictionary<string, string> result = scrapper.RunTask<Dictionary<string, string>>(scrapper.GetFlightDataAsync(query,
+            Dictionary<string, string> result = RunTask<Dictionary<string, string>>(GetFlightDataAsync(query,
                 cts.Token));
 
             var routes = new Routes();
@@ -95,7 +93,7 @@ namespace ScrapR.Models.TrvBeta
                     routes = Newtonsoft.Json.JsonConvert.DeserializeObject<Models.TrvBeta.Routes>(result["flightsData"]).TrimAll();
 
                     Console.WriteLine(routes.ToJson(true));
-                    Console.WriteLine(routes.Count + " Flights Found");
+                    Console.WriteLine("\n" + routes.Count + " Flights Found");
                 }
                 else
                 {

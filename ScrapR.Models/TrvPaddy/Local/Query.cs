@@ -13,7 +13,7 @@ namespace ScrapR.Models.TrvPaddy.Local
         public int children = 0;
         public int infants = 0;
         public string tripClass = Trip.Class.All;
-        public string tripType = TrvPaddy.Query.Trip.Type.OneWay;
+        public string tripType = Trip.Type.OneWay;
 
         public class Trip
         {
@@ -29,6 +29,12 @@ namespace ScrapR.Models.TrvPaddy.Local
                 public const string All = "all";
                 public const string Economy = "economy";
                 public const string Business = "business";
+            }
+
+            public class Type
+            {
+                public const string OneWay = "One Way";
+                public const string Return = "Roundtrip";
             }
 
             public class TimeOfDay
@@ -54,10 +60,36 @@ namespace ScrapR.Models.TrvPaddy.Local
             }
         }
 
+        public override string ToString()
+        {
+            return "https://domestic.travelpaddy.com/flights/listing/?type=" + tripType + "&destination_type=Domestic" +
+                "&from=" + trips.FirstOrDefault().airportOrigin + "&to=" + trips.FirstOrDefault().airportDestination +
+                "&departure_date=" + trips.FirstOrDefault().departureDate?.Replace("/", "%2F") + 
+                "&return_date=" + trips.FirstOrDefault().returnDate?.Replace("/", "%2F")  + 
+                "&departure_time_of_day=&return_time_of_day=&cabin_class=" + tripClass + "&adults=" + adults + "&children=" + children + "&infants=" + infants;
+        }
+
+        public static Query GetSampleData()
+        {
+            return Query.GetQuery(TrvPaddy.Query.GetSampleData());
+        }
+
+        private static string convertTripType(string parentTripType)
+        {
+            if (parentTripType == TrvPaddy.Query.Trip.Type.OneWay)
+            {
+                return Trip.Type.OneWay;
+            }
+            else
+            {
+                return Trip.Type.Return;
+            }
+        }
+
         public static Query GetQuery(TrvPaddy.Query baseQuery)
         {
             Query ret = new Query();
-            ret.tripType = baseQuery.tripType;
+            ret.tripType = convertTripType(baseQuery.tripType);
             ret.tripClass = baseQuery.tripClass.ToLower();
             if (baseQuery.visitors != null)
             {
@@ -73,8 +105,8 @@ namespace ScrapR.Models.TrvPaddy.Local
                     Trip retTrip = new Trip();
                     retTrip.airportDestination = $"{trip.destination.cityName}, {trip.destination.countryCode} - {trip.destination.airportName} ({trip.destination.cityCode})";
                     retTrip.airportOrigin = $"{trip.origin.cityName}, {trip.origin.countryCode} - {trip.origin.airportName} ({trip.origin.cityCode})";
-                    retTrip.departureDate = trip.departureDate.ToString("ddd, dd MMM yyyy");
-                    retTrip.returnDate = ((trip.returnDate == new DateTime()) || (trip.returnDate == default(DateTime))) ? "" : trip.returnDate.ToString("ddd, dd MMM yyyy");
+                    retTrip.departureDate = trip.departureDate.ToString("MM/dd/yyyy");
+                    retTrip.returnDate = ((trip.returnDate == new DateTime()) || (trip.returnDate == default(DateTime))) ? "" : trip.returnDate.ToString("MM/dd/yyyy");
                     retTrip.departureTime = Trip.TimeOfDay.GetTimeOfDay(trip.departureDate);
                     retTrip.returnTime = Trip.TimeOfDay.GetTimeOfDay(trip.returnDate);
                     ret.trips.Add(retTrip);

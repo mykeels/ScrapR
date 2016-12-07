@@ -27,19 +27,22 @@ namespace ScrapR.Tests
         }
 
         [TestMethod]
-        public void testOneWay()
+        [Description("This simulates and tests a one-way trip via Wkn")]
+        public void wknOneWayTest()
         {
             testTrip(Query.TripType.OneWay);
         }
 
         [TestMethod]
-        public void testReturnTrip()
+        [Description("This simulates and tests a return trip via Wkn")]
+        public void wknReturnTripTest()
         {
             testTrip(Query.TripType.Return);
         }
 
         [TestMethod]
-        public void testMultiTrip()
+        [Description("This simulates and tests a multiple destination trip via Wkn")]
+        public void wknMultiTripTest()
         {
             testTrip(Query.TripType.Multi);
         }

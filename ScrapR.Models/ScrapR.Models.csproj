@@ -73,6 +73,8 @@
     <Compile Include="TrvFix\Scrapper.cs" />
     <Compile Include="TrvPaddy\International\Query.cs" />
     <Compile Include="TrvPaddy\Local\Query.cs" />
+    <Compile Include="TrvPaddy\Local\Flight.cs" />
+    <Compile Include="TrvPaddy\Local\Scrapper.cs" />
     <Compile Include="TrvPaddy\Query.cs" />
     <Compile Include="TrvStart\Itinerary.cs" />
     <Compile Include="TrvStart\Query.cs" />
@@ -112,6 +114,7 @@
     <None Include="Resources\Countries.txt" />
     <None Include="Resources\trvPaddy_sampleLocal.txt" />
     <None Include="Resources\trvPaddy_sampleInternational.txt" />
+    <None Include="Resources\trvPaddy_getFlightsData.txt" />
     <Content Include="TrvPaddy\TrvPaddy.js" />
     <None Include="Resources\trvFix_sampleMultiData.txt" />
     <None Include="Resources\trvFix_sampleReturnData.txt" />

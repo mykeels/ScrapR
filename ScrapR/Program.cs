@@ -56,16 +56,38 @@ namespace ScrapR
         private static void runTrvPaddy()
         {
             var baseQuery = Models.TrvPaddy.Query.GetSampleData();
-            var localQuery = Models.TrvPaddy.Local.Query.GetQuery(baseQuery);
-            var internationalQuery = Models.TrvPaddy.International.Query.GetQuery(baseQuery);
             Console.WriteLine("Base Query: " + baseQuery.ToJson(true));
-            Promise<string>.Create(() =>
+            Console.WriteLine("Local or International Flight?");
+            Console.WriteLine("1\tLocal");
+            Console.WriteLine("2\tInternational");
+            int option = Convert.ToInt32(Console.ReadLine());
+            switch (option)
             {
-                Clipboard.SetText(internationalQuery.ToJson());
-                return null;
-            });
-            Console.WriteLine("Local Query: " + localQuery.ToJson(true));
-            Console.WriteLine("International Query: " + internationalQuery.ToJson(true));
+                case 1:
+                    var localQuery = Models.TrvPaddy.Local.Query.GetQuery(baseQuery);
+                    Promise<string>.Create(() =>
+                    {
+                        Clipboard.SetText(localQuery.ToJson());
+                        return null;
+                    });
+                    Console.WriteLine("Local Query: " + localQuery.ToJson(true));
+                    Console.WriteLine("Search Url: " + localQuery.ToString());
+                    Models.TrvPaddy.Local.Scrapper scrapper = new Models.TrvPaddy.Local.Scrapper();
+                    scrapper.GetFlightsData(localQuery);
+                    break;
+                case 2:
+                    var internationalQuery = Models.TrvPaddy.International.Query.GetQuery(baseQuery);
+                    Promise<string>.Create(() =>
+                    {
+                        Clipboard.SetText(internationalQuery.ToJson());
+                        return null;
+                    });
+                    Console.WriteLine("International Query: " + internationalQuery.ToJson(true));
+                    Console.WriteLine("Search Url: " + internationalQuery.ToString());
+                    break;
+                default:
+                    break;
+            }
         }
 
         private static void runTrvFix()

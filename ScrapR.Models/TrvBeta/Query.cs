@@ -26,12 +26,12 @@ namespace ScrapR.Models.TrvBeta
         public string returningDate { get; set; }
         public string flightClass { get; set; }
         public int tripType { get; set; } //one-way = 1, round-trip = 2, multi-trip = 3
-
-        public class TripType
+        
+        public enum TripType
         {
-            public const int OneWay = 1;
-            public const int Return = 2;
-            public const int Multi = 3;
+            OneWay = 1,
+            Return = 2,
+            Multi = 3
         }
 
         public new string ToString()
@@ -47,9 +47,9 @@ namespace ScrapR.Models.TrvBeta
             return "https://www.travelbeta.com";
         }
 
-        public static Query GetSample()
+        public static Query GetSample(TripType tripType = TripType.OneWay)
         {
-            return new Models.TrvBeta.Query()
+            return new Query()
             {
                 adult = 1,
                 departureAirportId = 35248, //lagos nigeria
@@ -57,7 +57,7 @@ namespace ScrapR.Models.TrvBeta
                 departingDate = DateTime.Now.AddDays(4).ToString("dd/MM/yyyy"),
                 returningDate = DateTime.Now.AddDays(8).ToString("dd/MM/yyyy"),
                 flightClass = "economy",
-                tripType = TripType.Multi,
+                tripType = (int)tripType,
                 multiTrip = (new Models.TrvBeta.Query.Trip[] {
                     new Models.TrvBeta.Query.Trip() {
                         arrivalAirportId = 34277, //jfk

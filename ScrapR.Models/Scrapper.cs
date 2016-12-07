@@ -22,7 +22,7 @@ namespace ScrapR.Models
                 {
                     //Console.WriteLine("URL:\n" + url);
                     var navigationCts = CancellationTokenSource.CreateLinkedTokenSource(token);
-                    navigationCts.CancelAfter((int)TimeSpan.FromSeconds(30).TotalMilliseconds);
+                    navigationCts.CancelAfter((int)TimeSpan.FromSeconds(60).TotalMilliseconds);
                     var navigationToken = navigationCts.Token;
 
                     // run the navigation task inside MessageLoopApartment

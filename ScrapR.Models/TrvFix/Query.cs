@@ -100,7 +100,8 @@ namespace ScrapR.Models.TrvFix
 
         public static Query GetSampleData(string tripType)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Query>(tripType == TripType.oneWay ? Resources.trvFix_sampleOneWayData : (tripType == TripType.returnTrip ? Resources.trvFix_sampleReturnData : Resources.trvFix_sampleMultiData));
+            var query = Newtonsoft.Json.JsonConvert.DeserializeObject<Query>(tripType == TripType.oneWay ? Resources.trvFix_sampleOneWayData : (tripType == TripType.returnTrip ? Resources.trvFix_sampleReturnData : Resources.trvFix_sampleMultiData));
+            return query;
         }
 
         public static string GetHomeUrl()

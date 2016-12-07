@@ -27,3 +27,7 @@ function setFlightsData(query) {
         $("#flight-search-button").click();
     }
 }
+
+function getFlightsData() {
+    return JSON.stringify(currPage.flightsCache);
+}

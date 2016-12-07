@@ -173,6 +173,15 @@ namespace ScrapR.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to function setFlightsData(a){&quot;string&quot;==typeof a&amp;&amp;(a=JSON.parse(a),this.argsIsString=!0),a&amp;&amp;a.trips&amp;&amp;a.trips.length&gt;0&amp;&amp;($(&quot;#from-field&quot;).val(a.trips[0].airportOrigin),$(&quot;#to-field&quot;).val(a.trips[0].airportDestination),$(&quot;#departure-date-field&quot;).val(a.trips[0].departureDate),$(&quot;#departure-time-of-day-field&quot;).val(a.trips[0].departureTime),$(&quot;#adults-field&quot;).val(a.adults),$(&quot;#children-field&quot;).val(a.children),$(&quot;#infants-field&quot;).val(a.infants),$(&quot;#cabin-class-field&quot;).val(a.tripClass),String.isNullOrEmpty(a.trips[0] [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string trvPaddy_getFlightsData {
+            get {
+                return ResourceManager.GetString("trvPaddy_getFlightsData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {&quot;trips&quot;:[{&quot;airportOrigin&quot;:&quot;Lagos,Nigeria-Murtala Muhammed(LOS)&quot;,&quot;airportDestination&quot;:&quot;Abuja,Nigeria-Nnamdi Azikiwe Intl(ABV)&quot;,&quot;departureDate&quot;:&quot;Sat, 03 Dec 2016&quot;,&quot;departureTime&quot;:&quot;Anytime&quot;,&quot;returnDate&quot;:&quot;Tue, 06 Dec 2016&quot;,&quot;returnTime&quot;:&quot;Anytime&quot;},{&quot;airportOrigin&quot;:&quot;Abuja,Nigeria-Nnamdi Azikiwe Intl(ABV)&quot;,&quot;airportDestination&quot;:&quot;London,United Kingdom-Heathrow(LHR)&quot;,&quot;departureDate&quot;:&quot;Fri, 09 Dec 2016&quot;,&quot;departureTime&quot;:&quot;Anytime&quot;,&quot;returnDate&quot;:&quot;&quot;,&quot;returnTime&quot;:&quot;Anytime&quot;}],&quot;adults&quot;:1,&quot;children&quot;:0,&quot;infants&quot;:0,&quot;tripClass&quot;:&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string trvPaddy_sampleInternational {

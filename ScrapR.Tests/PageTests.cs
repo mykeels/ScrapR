@@ -14,25 +14,21 @@ namespace ScrapR.Tests
     [TestClass]
     public class PageTests
     {
-        [TestMethod]
         public void wknLoadsSuccessfully()
         {
             testLoadPage("http://www.wakanow.com/en-ng/");
         }
 
-        [TestMethod]
         public void trvStartLoadsSuccessfully()
         {
             testLoadPage("http://www.travelstart.com");
         }
 
-        [TestMethod]
         public void trvBetaLoadsSuccessfully()
         {
             testLoadPage("http://www.travelbeta.com");
         }
 
-        [TestMethod]
         public void trvFixLoadsSuccessfully()
         {
             testLoadPage("http://www.travelfix.com");

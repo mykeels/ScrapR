@@ -44,10 +44,10 @@
   <ItemGroup>
     <Compile Include="PageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="trvBetaTests.cs" />
-    <Compile Include="trvFixTests.cs" />
-    <Compile Include="trvPaddyTests.cs" />
-    <Compile Include="trvStartTests.cs" />
+    <Compile Include="TrvBetaTests.cs" />
+    <Compile Include="TrvFixTests.cs" />
+    <Compile Include="TrvPaddyTests.cs" />
+    <Compile Include="TrvStartTests.cs" />
     <Compile Include="WknTests.cs" />
   </ItemGroup>
   <ItemGroup>

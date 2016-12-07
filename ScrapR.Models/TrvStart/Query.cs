@@ -59,11 +59,11 @@ namespace ScrapR.Models.TrvStart
             return "https://travelstart.com.ng";
         }
 
-        public static Query GetSampleQuery()
+        public static Query GetSampleQuery(string tripType = TripType.oneWay)
         {
             Query query = new Query();
             query = Newtonsoft.Json.JsonConvert.DeserializeObject<Query>(Resources.trvStart_SampleData);
-            query.tripType = TripType.oneWay;
+            query.tripType = tripType;
 
             int dayAdd = 3;
             query.itineraries.ForEach((itinerary) =>
