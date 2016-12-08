@@ -12,6 +12,13 @@ namespace ScrapR
 {
     public class Program
     {
+        private enum TripType
+        {
+            OneWay = 1,
+            Return = 2,
+            Multi = 3
+        }
+
         public static void Main(string[] args)
         {
             runScrapper(getUserOption());
@@ -21,12 +28,22 @@ namespace ScrapR
         private static int getUserOption()
         {
             //Console.WriteLine(DateTime.Now.ToString("ddd, dd MMM yyyy"));
-            Console.WriteLine("1\t Wakanow");
+            Console.WriteLine("Choose Trv System");
+            Console.WriteLine("1\t Wkn");
             Console.WriteLine("2\t Trv Start");
             Console.WriteLine("3\t Trv Beta");
             Console.WriteLine("4\t Trv Fix");
             Console.WriteLine("5\t Trv Paddy");
             return Convert.ToInt32(Console.ReadLine());
+        }
+
+        private static TripType getTripType()
+        {
+            Console.WriteLine("Choose Trip Type");
+            Console.WriteLine("1\t One Way");
+            Console.WriteLine("2\t Return");
+            Console.WriteLine("3\t Multi");
+            return (TripType)Convert.ToInt32(Console.ReadLine());
         }
 
         private static void runScrapper(int option)
@@ -51,6 +68,7 @@ namespace ScrapR
                 default:
                     break;
             }
+            Console.ReadLine();
         }
 
         private static void runTrvPaddy()
@@ -92,26 +110,30 @@ namespace ScrapR
 
         private static void runTrvFix()
         {
+            var tripType = getTripType();
             Models.TrvFix.Scrapper scrapper = new Models.TrvFix.Scrapper();
-            scrapper.GetResults();
+            scrapper.GetResults(Models.TrvFix.Query.GetSampleData(Models.TrvFix.Query.TripType.GetTripType((int)tripType)));
         }
 
         private static void runTrvBeta()
         {
+            var tripType = getTripType();
             Models.TrvBeta.Scrapper scrapper = new Models.TrvBeta.Scrapper();
-            scrapper.GetFlightData();
+            scrapper.GetFlightData(Models.TrvBeta.Query.GetSample((Models.TrvBeta.Query.TripType)(int)tripType));
         }
 
         private static void runTrvStart()
         {
+            var tripType = getTripType();
             Models.TrvStart.Scrapper scrapper = new Models.TrvStart.Scrapper();
-            scrapper.GetItineraries();
+            scrapper.GetItineraries(Models.TrvStart.Query.GetSampleQuery(Models.TrvStart.Query.TripType.GetTripType((int)tripType)));
         }
 
         private static void runWkn()
         {
+            var tripType = getTripType();
             Models.Wkn.Scrapper scrapper = new Models.Wkn.Scrapper();
-            scrapper.GetFlightsData();
+            scrapper.GetFlightsData(Models.Wkn.Query.GetSampleQuery(Models.Wkn.Query.TripType.GetTripType((int)tripType)));
         }
     }
 }

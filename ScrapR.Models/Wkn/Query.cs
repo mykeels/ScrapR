@@ -122,6 +122,13 @@ namespace ScrapR.Models.Wkn
             public const string OneWay = "OW";
             public const string Return = "RT";
             public const string Multi = "MS";
+
+            public static string GetTripType(int type)
+            {
+                if (type == 1) return OneWay;
+                else if (type == 2) return Return;
+                else return Multi;
+            }
         }
 
         public static Query GetSampleQuery(string tripType = TripType.Multi)

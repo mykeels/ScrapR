@@ -17,6 +17,12 @@ namespace ScrapR.Models.TrvStart
             public const string oneWay = "oneway";
             public const string returnTrip = "return";
             public const string multiTrip = "multiTrip";
+            public static string GetTripType(int type)
+            {
+                if (type == 1) return oneWay;
+                else if (type == 2) return returnTrip;
+                else return multiTrip;
+            }
         }
         public class Locale
         {

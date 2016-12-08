@@ -24,10 +24,12 @@ namespace ScrapR.Models.TrvFix
 
                 Console.WriteLine("\nSearchData after setFlightData: " + searchData);
                 Console.WriteLine("Waiting for Location Change ... Please wait");
+
                 while (!browser.Url.ToString().Contains("flight/r"))
                 {
                     Thread.Sleep(100);
                     Application.DoEvents();
+                    if (browser.Url.ToString().Contains("no-result")) return new List<Result>();
                 }
                 while (browser.ReadyState != WebBrowserReadyState.Complete)
                 {
@@ -63,7 +65,10 @@ namespace ScrapR.Models.TrvFix
             var itineraries = scrapper.RunTask(scrapper.GetResultsAsync(query, cts.Token));
             Console.WriteLine("\nResult Data:\t" + itineraries.ToJson(true));
             var endDate = DateTime.Now;
-            Console.WriteLine(itineraries.Count + " Flight Itineraries Found");
+            if (itineraries != null)
+            {
+                Console.WriteLine(itineraries.Count + " Flight Itineraries Found");
+            }
             Console.WriteLine("Time Taken: " + endDate.Subtract(startDate).TotalSeconds + " seconds");
             Console.WriteLine("========================================================= End of Tests for TrvStart " +
                 "====================================================================");

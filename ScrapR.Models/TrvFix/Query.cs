@@ -89,6 +89,13 @@ namespace ScrapR.Models.TrvFix
             public const string oneWay = "OneWay";
             public const string returnTrip = "Return";
             public const string multi = "Circle";
+
+            public static string GetTripType(int type)
+            {
+                if (type == 1) return oneWay;
+                else if (type == 2) return returnTrip;
+                else return multi;
+            }
         }
         public class CabinClass
         {
@@ -101,6 +108,15 @@ namespace ScrapR.Models.TrvFix
         public static Query GetSampleData(string tripType)
         {
             var query = Newtonsoft.Json.JsonConvert.DeserializeObject<Query>(tripType == TripType.oneWay ? Resources.trvFix_sampleOneWayData : (tripType == TripType.returnTrip ? Resources.trvFix_sampleReturnData : Resources.trvFix_sampleMultiData));
+            var d1 = DateTime.Now.AddDays(2);
+            query.departureDate = d1.ToString("yyyy-MM-dd");
+            query.arrivalDate = d1.AddDays(2).ToString("yyyy-MM-dd");
+            query.minimumDate = d1.ToString("yyyy-MM-dd");
+            query.multiCity?.items?.ForEach((item) =>
+            {
+                item.departureDate = d1.ToString("yyyy-MM-dd");
+                d1 = d1.AddDays(2);
+            });
             return query;
         }
 
