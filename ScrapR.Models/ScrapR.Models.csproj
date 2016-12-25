@@ -72,9 +72,12 @@
     <Compile Include="TrvFix\Result.cs" />
     <Compile Include="TrvFix\Scrapper.cs" />
     <Compile Include="TrvPaddy\International\Query.cs" />
+    <Compile Include="TrvPaddy\Local\FlightsResponse.cs" />
+    <Compile Include="TrvPaddy\Local\Passenger.cs" />
     <Compile Include="TrvPaddy\Local\Query.cs" />
     <Compile Include="TrvPaddy\Local\Flight.cs" />
     <Compile Include="TrvPaddy\Local\Scrapper.cs" />
+    <Compile Include="TrvPaddy\Local\Trip.cs" />
     <Compile Include="TrvPaddy\Query.cs" />
     <Compile Include="TrvStart\Itinerary.cs" />
     <Compile Include="TrvStart\Query.cs" />

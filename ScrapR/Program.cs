@@ -91,7 +91,8 @@ namespace ScrapR
                     Console.WriteLine("Local Query: " + localQuery.ToJson(true));
                     Console.WriteLine("Search Url: " + localQuery.ToString());
                     Models.TrvPaddy.Local.Scrapper scrapper = new Models.TrvPaddy.Local.Scrapper();
-                    scrapper.GetFlightsData(localQuery);
+                    var flights = scrapper.GetFlights(localQuery);
+                    Console.WriteLine(flights.ToJson(true));
                     break;
                 case 2:
                     var internationalQuery = Models.TrvPaddy.International.Query.GetQuery(baseQuery);

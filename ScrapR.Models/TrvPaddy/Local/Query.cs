@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ScrapR.Models.TrvPaddy.Local
@@ -23,6 +24,25 @@ namespace ScrapR.Models.TrvPaddy.Local
             public string departureTime = "";
             public string returnDate = "";
             public string returnTime = "";
+
+            public string getAirportOriginCode()
+            {
+                return Regex.Match(this.airportOrigin, @"\((.+?)\)").Groups[1].Value;
+            }
+
+            public string getAirportDestinationCode()
+            {
+                return Regex.Match(this.airportDestination, @"\((.+?)\)").Groups[1].Value;
+            }
+
+            public DateTime getDepartureDate()
+            {
+                return DateTime.Parse(this.departureDate);
+            }
+            public DateTime getReturnDate()
+            {
+                return DateTime.Parse(this.returnDate);
+            }
 
             public class Class
             {
@@ -64,9 +84,37 @@ namespace ScrapR.Models.TrvPaddy.Local
         {
             return "https://domestic.travelpaddy.com/flights/listing/?type=" + tripType + "&destination_type=Domestic" +
                 "&from=" + trips.FirstOrDefault().airportOrigin + "&to=" + trips.FirstOrDefault().airportDestination +
-                "&departure_date=" + trips.FirstOrDefault().departureDate?.Replace("/", "%2F") + 
-                "&return_date=" + trips.FirstOrDefault().returnDate?.Replace("/", "%2F")  + 
+                "&departure_date=" + trips.FirstOrDefault().departureDate?.Replace("/", "%2F") +
+                "&return_date=" + trips.FirstOrDefault().returnDate?.Replace("/", "%2F") +
                 "&departure_time_of_day=&return_time_of_day=&cabin_class=" + tripClass + "&adults=" + adults + "&children=" + children + "&infants=" + infants;
+        }
+
+        public string ToSearchUrl()
+        {
+            return "https://domestic.travelpaddy.com/ajax/flight-model.ajax.php?" + this.GetFlightSearchMetaData();
+        }
+
+        public string GetFlightSearchMetaData()
+        {
+            return "action=get_flight_search_results&return_as_json=1&" +
+                $"type={tripType}&from={trips.FirstOrDefault().airportOrigin}&" +
+                $"to={trips.FirstOrDefault().airportDestination}&departure_date={trips.FirstOrDefault().departureDate?.Replace("/", "%2F")}&" +
+                $"return_date={trips.FirstOrDefault().returnDate?.Replace("/", "%2F")}&departure_time_of_day=&" +
+                $"return_time_of_day=&cabin_class={tripClass}&adults={adults}&children={children}&infants={infants}";
+        }
+
+        public string GetFlightFaresMetaData()
+        {
+            string ret = "action=get_parallel_fare_details&return_as_json=true&" +
+                $"type={tripType?.ToLower()}&from_code={trips.FirstOrDefault().getAirportOriginCode()}&" +
+                $"to_code={trips.FirstOrDefault().getAirportDestinationCode()}&departure_day={trips.FirstOrDefault().getDepartureDate().Day}&" +
+                $"departure_month={trips.FirstOrDefault().getDepartureDate().ToString("MMM")}&departure_year={trips.FirstOrDefault().getDepartureDate().Year}&" +
+                $"adults={adults}&children={children}&infants={infants}";
+            if (!String.IsNullOrEmpty(trips.FirstOrDefault().returnDate))
+            {
+                ret += "&" + $"return_day={trips.FirstOrDefault().getReturnDate().Day}&return_month={trips.FirstOrDefault().getReturnDate().ToString("MMM")}&return_year={trips.FirstOrDefault().getReturnDate().Year}";
+            }
+            return ret;
         }
 
         public static Query GetSampleData()
